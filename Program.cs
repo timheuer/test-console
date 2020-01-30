@@ -10,6 +10,7 @@ namespace test_console
             Console.WriteLine("Enter your name: ");
             var input = Console.ReadLine();
             Console.WriteLine($"👋 {input}");
+            Console.WriteLine("Making one more change");
         }
     }
 }
