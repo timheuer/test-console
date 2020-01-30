@@ -6,7 +6,7 @@ namespace test_console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World from remote clients!");
         }
     }
 }
