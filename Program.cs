@@ -7,6 +7,9 @@ namespace test_console
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World from remote clients!");
+            Console.WriteLine("Enter your name: ");
+            var input = Console.ReadLine();
+            Console.WriteLine($"👋 {input}");
         }
     }
 }
