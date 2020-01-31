@@ -12,7 +12,7 @@ namespace GreetingLib
 
             var greet = r.Next(0, greetings.Length - 1);
 
-            return $"{greet} {inputName}";
+            return $"{greetings[greet]} {inputName}";
         }
     }
 }
