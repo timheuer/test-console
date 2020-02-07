@@ -1,6 +1,6 @@
 {
     "recommendations": [
-      "ms-vscode.vscode.csharp",
+      "ms-vscode.csharp",
       "formulahendry.dotnet-test-explorer"
     ]
 }
