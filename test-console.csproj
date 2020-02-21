@@ -7,9 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ConsoleTests\**" />
     <Compile Remove="libs\**" />
+    <Compile Remove="XUnitTests\**" />
+    <EmbeddedResource Remove="ConsoleTests\**" />
     <EmbeddedResource Remove="libs\**" />
+    <EmbeddedResource Remove="XUnitTests\**" />
+    <None Remove="ConsoleTests\**" />
     <None Remove="libs\**" />
+    <None Remove="XUnitTests\**" />
   </ItemGroup>
 
   <ItemGroup>
