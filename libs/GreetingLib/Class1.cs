@@ -4,15 +4,17 @@ namespace GreetingLib
 {
     public class Greetings
     {
-        string[] greetings = new String[] { "Hello", "Goodbye", "G'day", "Cheers" };
+        public string[] greetings = new string[] { "Hello", "Goodbye", "G'day", "Cheers" };
 
         public string SaySomething(string inputName)
+        { 
+            return $"{GetRandomGreeting()} {inputName}";
+        }
+
+        public string GetRandomGreeting()
         {
             Random r = new Random();
-
-            var greet = r.Next(0, greetings.Length - 1);
-
-            return $"{greetings[greet]} {inputName}";
+            return greetings[r.Next(0, greetings.Length - 1)];
         }
 
         public string SayHello(string inputName) => $"Hello {inputName}";

@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace ConsoleTests
 {
@@ -17,8 +18,22 @@ namespace ConsoleTests
         public void RandomDoesntIncludeTest()
         {
             GreetingLib.Greetings greet = new GreetingLib.Greetings();
-            var result = greet.SaySomething("Tim");
-            Assert.AreNotEqual("Hi there Tim", result);
+            for (int i = 0; i < 100; i++)
+            {
+                var result = greet.SaySomething("Tim");
+                Assert.AreNotEqual("Hi there Tim", result);
+            }
+        }
+
+        [TestMethod]
+        public void RandomIncludesOnlyFromListTest()
+        {
+            GreetingLib.Greetings greet = new GreetingLib.Greetings();
+            for (int i = 0; i < 1000; i++)
+            {
+                var prefix = greet.GetRandomGreeting();
+                Assert.IsTrue(Array.IndexOf(greet.greetings, prefix) >= 0);
+            }
         }
     }
 }
