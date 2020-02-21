@@ -39,3 +39,12 @@ jobs:
       with:
         name: consoleapp
         path: finalpackage
+    
+    - name: Send Tweet Action
+      uses: timheuer/send-tweet-action@master
+      with:
+        status: "A build of test-console completed"
+        consumer-key: ${{ secrets.CONSUMER_KEY }}
+        consumer-secret: ${{ secrets.CONSUMER_SECRET }}
+        access-token: ${{ secrets.ACCESS_TOKEN }}
+        access-token-secret: ${{ secrets.ACCESS_TOKEN_SECRET }}
