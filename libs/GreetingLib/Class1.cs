@@ -14,5 +14,7 @@ namespace GreetingLib
 
             return $"{greetings[greet]} {inputName}";
         }
+
+        public string SayHello(string inputName) => $"Hello {inputName}";
     }
 }
