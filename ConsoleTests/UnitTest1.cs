@@ -29,7 +29,7 @@ namespace ConsoleTests
         public void RandomIncludesOnlyFromListTest()
         {
             GreetingLib.Greetings greet = new GreetingLib.Greetings();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10000000; i++)
             {
                 var prefix = greet.GetRandomGreeting();
                 Assert.IsTrue(Array.IndexOf(greet.greetings, prefix) >= 0);
