@@ -21,7 +21,7 @@ namespace ConsoleTests
             for (int i = 0; i < 100; i++)
             {
                 var result = greet.SaySomething("Tim");
-                Assert.AreNotEqual("Hi there Tim", result);
+                Assert.AreNotEqual("Howdy there Tim", result);
             }
         }
 
