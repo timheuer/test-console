@@ -11,6 +11,7 @@ namespace test_console
             var input = Console.ReadLine();
             Console.WriteLine($"👋 {input}");
             Console.WriteLine("Well that's that!");
+            Console.WriteLine("Hello again!");
             Console.ReadLine();
         }
     }
