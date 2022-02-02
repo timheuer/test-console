@@ -23,7 +23,7 @@ jobs:
       DOTNET_MULTILEVEL_LOOKUP: 0
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os: [windows-2022, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -47,17 +47,8 @@ jobs:
     - name: Publish
       run: dotnet publish --configuration Release -o finalpackage --no-build
 
-    - name: Publish artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: consoleapp
-        path: finalpackage
-    
-    - name: Send Tweet Action
-      uses: timheuer/send-tweet-action@master
-      with:
-        status: "A build of test-console completed"
-        consumer-key: ${{ secrets.CONSUMER_KEY }}
-        consumer-secret: ${{ secrets.CONSUMER_SECRET }}
-        access-token: ${{ secrets.ACCESS_TOKEN }}
-        access-token-secret: ${{ secrets.ACCESS_TOKEN_SECRET }}
+    #- name: Publish artifact
+    #  uses: actions/upload-artifact@master
+    #  with:
+    #    name: consoleapp
+    #    path: finalpackage
