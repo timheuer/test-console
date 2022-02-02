@@ -11,7 +11,6 @@ on:
 
 jobs:
   build:
-    if: github.event_name == 'push' && contains(toJson(github.event.commits), '***NO_CI***') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false
     name: Build Package
     runs-on: ${{ matrix.os }}
     env:
@@ -21,7 +20,7 @@ jobs:
       DOTNET_GENERATE_ASPNET_CERTIFICATE: false
       DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
       DOTNET_MULTILEVEL_LOOKUP: 0
-      NUGET_CERT_REVOCATION_MODE: offline
+      NUGET_CERT_REVOCATION_MODE: 'offline'
     strategy:
       matrix:
         os: [windows-2022, ubuntu-latest]
