@@ -42,7 +42,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: test
-      run: dotnet test --configuration Release --no-restore
+      run: dotnet test --configuration Release --no-restore --logger GitHubActions
 
     - name: Publish
       run: dotnet publish --configuration Release -o finalpackage --no-build
