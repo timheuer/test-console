@@ -23,18 +23,21 @@ jobs:
       NUGET_CERT_REVOCATION_MODE: offline
     strategy:
       matrix:
-        os: [windows-2022, ubuntu-latest]
+        os: [windows-2019, windows-2022, ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v1.9.0
-      with:
-        dotnet-version: |
-          3.1.x
-          5.0.x
-          6.0.x
+    #- name: Setup .NET Core SDK
+    #  uses: actions/setup-dotnet@v1.9.0
+    #  with:
+    #    dotnet-version: |
+    #      3.1.x
+    #      5.0.x
+    #      6.0.x
 
+    - name: dotnet info
+      run: dotnet --info
+      
     - name: Restore
       run: dotnet restore
 
