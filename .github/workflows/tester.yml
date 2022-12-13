@@ -34,20 +34,21 @@ jobs:
     - uses: actions/checkout@v3
       
     - name: Setup MSBuild 1 (x64)
-      uses: microsoft/setup-msbuild@fix104
+      uses: microsoft/setup-msbuild@v1
       with:
         msbuild-architecture: x64
       
     - name: Setup MSBuild 2 (x86)
-      uses: microsoft/setup-msbuild@fix104
+      uses: microsoft/setup-msbuild@v1
       with:
         msbuild-architecture: x86
         
     - name: Setup MSBuild 3 (arm64)
       if: always()
-      uses: microsoft/setup-msbuild@fix104
+      uses: microsoft/setup-msbuild@v1
       with:
         msbuild-architecture: arm64
         
     - name: Setup MSBuild 4 (default)
-      uses: microsoft/setup-msbuild@fix104
+      if: always()
+      uses: microsoft/setup-msbuild@v1
